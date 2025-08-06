@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) => GetMaterialApp(
           debugShowCheckedModeBanner: false,
           // scrollBehavior: const CustomOverScrollBehavior(),
-          title: '驾考宝典助手',
+          title: '驾校',
           // builder: BotToastInit(),
           // navigatorObservers: [BotToastNavigatorObserver()],
           initialBinding: States.initialBinding,

@@ -5,9 +5,9 @@ import 'package:get/get.dart';
 
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:web/common/config.dart';
-import 'package:web/common/res/asset_images.dart';
-import 'package:web/widgets/svg_image.dart';
+import 'package:web_official_website/common/config.dart';
+import 'package:web_official_website/common/res/asset_images.dart';
+import 'package:web_official_website/widgets/svg_image.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -50,10 +50,10 @@ class MainPage extends StatelessWidget {
                 fontWeight: FontWeight.bold)),
         Padding(
             padding: EdgeInsets.only(left: 100.w),
-            child: Text("驾考无忧",
+            child: Text("驾校",
                 style: TextStyle(
                     color: Color(0xffffffff),
-                    fontSize: 40.sp,
+                    fontSize: 60.sp,
                     fontWeight: FontWeight.bold))),
         SizedBox(height: 10.h),
         Container(
@@ -95,12 +95,12 @@ class MainPage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Expanded(child: SizedBox()),
-        Text("驾考宝典助手",
+        Text("驾校",
             style: TextStyle(
                 color: Color(0xffffffff),
                 fontSize: 60.sp,
                 fontWeight: FontWeight.bold)),
-        Text("考驾照  买二手车  就用驾考宝典助手",
+        Text("考驾照——刷题就用驾校APP",
             style: TextStyle(
                 color: Color(0xffe3f6fe),
                 fontSize: 30.sp,
@@ -110,21 +110,16 @@ class MainPage extends StatelessWidget {
           children: [
             Column(
               children: [
-                Visibility(
-                    visible: GetPlatform.isMacOS,
-                    child: getButton(
-                        name: "Mac版     ",
-                        icon: AssetImages.mac,
-                        onClick: () async {
-                          String url =
-                              "https://apps.apple.com/app/%E9%A9%BE%E8%80%83%E5%AE%9D%E5%8"
-                              "5%B8%E5%8A%A9%E6%89%8B-2022%E8%80%83%E9%A9%BE%E8%AF%81%E6%9C%"
-                              "80%E6%96%B0%E4%BA%A4%E8%A7%84%E5%88%B7%E9%A2%98/id1627139721";
-                          if (await canLaunch(url)) {
-                            await launch(url); // 启动QQ
-                          }
-                        })),
-                SizedBox(height: 20.h),
+                getButton(
+                    name: "Mac版       ",
+                    icon: AssetImages.mac,
+                    onClick: () async {
+                      String url = "https://apps.apple.com/cn/app/id6450564625";
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      }
+                    }),
+                SizedBox(height: 40.h),
                 getButton(
                     name: "Window版",
                     icon: AssetImages.windows,
